@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{mallcss/images/x-icon.png}" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+<!-- header section start here -->
+<div th:replace="~{common/mallcommon::topbar}"></div>
+<!-- header section ending here -->
+
+<!-- Page Header section start here -->
+<div class="page-header py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="page-header-area">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Pay Page</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header section ending here -->
+
+<!-- Contact Us Section Start Here -->
+<div class="contact-section padding-tb aside-bg pb-0">
+    <div class="container">
+        <div class="contact-top padding-tb">
+            <div class="row">
+                <div class="col-lg-8">
+                    <article class="contact-form-wrapper">
+                        <div class="contact-form">
+                            <h3>个人信息</h3>
+                            <p class="mb-5">填写个人信息，等待卖家联系。</p>
+                            <form action="contact.php" method="POST" id="commentform" class="comment-form">
+                                <input type="text" name="name" class="" placeholder="姓名*">
+                                <input type="email" name="email" class="" placeholder="QQ*">
+                                <input type="text" name="phone" class="" placeholder="电话号码*">
+                                <textarea name="text" rows="9" placeholder="你想对卖家说...."></textarea>
+                                <div class="submit-btn-grp d-flex flex-wrap align-items-center">
+                                    <button type="submit" class="theme-btn"> <span>发送</span></button>
+                                    <p class="form-message"></p>
+                                </div>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact Us Section ENding Here -->
+
+
+<!-- footer section start here -->
+<div th:replace="~{common/mallcommon::footbar}"></div>
+<!-- footer section ending here -->
+
+<script th:src="@{mallcss/js/jquery.js}"></script>
+<script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+<script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+<script th:src="@{mallcss/js/swiper.min.js}"></script>
+<script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+<script th:src="@{mallcss/js/functions.js}"></script>
+
+
+
+<script src="assets/js/jquery.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/isotope.pkgd.min.js"></script>
+<script src="assets/js/swiper.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/functions.js"></script>
+</body>
+
+</html>

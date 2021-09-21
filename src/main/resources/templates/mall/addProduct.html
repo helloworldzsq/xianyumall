@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{/mallcss/images/x-icon.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+<div th:replace="~{common/mallcommon::topbar}"></div>
+
+<!-- Page Header section start here -->
+    <div class="page-header py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-area">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Contact Page</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header section ending here -->
+
+    <!-- Contact Us Section Start Here -->
+    <div class="contact-section padding-tb aside-bg pb-0">
+        <div class="container">
+            <div class="contact-top padding-tb">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <article class="contact-form-wrapper">
+                            <div class="contact-form">
+                                <h3>发布宝贝</h3>
+                                <p class="mb-5">快去发个宝贝，让旧物发光</p>
+<!--                                enctype="multipart/form-data"-->
+                                <form  class="comment-form" th:action="@{/upload}" method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="pid">
+                                    <textarea name="title" rows="9" placeholder="买家都关心品牌型号，入手渠道，转手原因..."></textarea>
+                                    <input type="file" name="file" id="file" multiple="multiple">
+                                    <h5 style="color: red"><span class="fw-normal me-3" style="color: red">Price :</span>
+                                        <input type="text" name="price" class="" placeholder="价格">
+                                    </h5>
+                                    <input type="hidden" name="username" th:value="${username}">
+                                    <input type="hidden" name="status" th:value="0">
+                                    <div class="submit-btn-grp d-flex flex-wrap align-items-center">
+                                        <button type="submit" class="theme-btn"> <span>发布</span></button>
+                                        <p class="form-message"></p>
+                                    </div>
+                                </form>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-lg-4">
+                        <article class="contact-form-wrapper"></article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Contact Us Section ENding Here -->
+
+
+    <!-- footer section start here -->
+    <div th:replace="~{common/mallcommon::footbar}"></div>
+    <!-- footer section ending here -->
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>

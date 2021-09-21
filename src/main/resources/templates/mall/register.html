@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{mallcss/images/x-icon.png}" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+    <!-- header section start here -->
+    <div th:replace="~{common/mallcommon::topbar}"></div>
+    <!-- header section ending here -->
+
+    <!-- Page Header section start here -->
+    <div class="page-header py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-area">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Register</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header section ending here -->
+
+    <!-- ==========Login Section Section Starts Here========== -->
+    <div class="login-section padding-tb">
+        <div class="container">
+            <div class="account-wrapper">
+                <h3 class="title">Register Now</h3>
+                <form class="account-form" th:action="@{/register}">
+                    <input type="hidden" name="uid">
+                    <div class="form-group">
+                        <input type="text" placeholder="用户名" name="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="密码" name="password">
+                    </div>
+<!--                    <div class="form-group">-->
+<!--                        <input type="password" placeholder="确认密码" name="repassword">-->
+<!--                    </div>-->
+                    <p style="color: red;text-align: center;font-size: larger" th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+                    <div class="form-group">
+                        <button class="w-100 theme-btn" type="submit"><span>注册</span></button>
+                    </div>
+                </form>
+                <div class="account-bottom">
+                    <span class="d-block cate pt-2">已经注册? <a th:href="@{/toLogin}"
+                            class="fw-bold">登录</a></span>
+                    <span class="or"><span>or</span></span>
+                    <h5 class="subtitle">第三方登录</h5>
+                    <ul class="social-icons justify-content-center">
+                        <li>
+                            <a href="#" class="facebook"><i class="icofont-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="twitter"><i class="icofont-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="linkedin"><i class="icofont-linkedin"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="instagram"><i class="icofont-instagram"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="pinterest"><i class="icofont-pinterest"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Login Section Section Ends Here========== -->
+
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>

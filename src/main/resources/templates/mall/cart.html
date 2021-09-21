@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{mallcss/images/x-icon.png}" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+    <div th:replace="~{common/mallcommon::topbar}"></div>
+
+    <!-- Page Header section start here -->
+    <div class="page-header py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-area">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header section ending here -->
+
+    <!-- Shop Cart Page Section start here -->
+    <div class="shop-cart style-2 py-5">
+        <div class="container">
+            <div class="section-wrapper">
+                <div class="cart-top bg-white">
+                    <table class="text-center">
+                        <thead>
+                            <tr>
+                                <th class="cat-product">Description</th>
+                                <th class="cat-price">Price</th>
+                                <th class="cat-edit">Delete</th>
+                                <th class="cat-edit">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="product : ${products}">
+                                <td class="product-item cat-product">
+                                    <div class="p-thumb">
+                                        <a href="#"><img th:src="@{${product.getPictureUrl()}}" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="#">[[${product.getTitle()}]]</a>
+                                    </div>
+                                </td>
+                                <td class="cat-price">￥[[${product.getPrice()}]]</td>
+                                <td class="cat-edit">
+                                    <a th:href="@{/delectPro}+${product.getPid()}"><i class="icofont-close"></i></a>
+                                </td>
+                                <td class="cat-edit" th:if="${product.getStatus()}==0">
+                                    <a href="#" class="theme-btn text-white">结算</a>
+                                </td><td class="cat-edit" th:if="${product.getStatus()}==1">
+                                    <p href="#" class="theme-btn text-white">宝贝已经被交易</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-item cat-product">
+                                    <div class="p-thumb">
+                                        <a href="#"><img th:src="@{mallcss/images/product/02.jpg}" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="#">Allen Keys Imperial/ Metric</a>
+                                    </div>
+                                </td>
+                                <td class="cat-price">$250</td>
+                                <td class="cat-edit">
+                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-item cat-product">
+                                    <div class="p-thumb">
+                                        <a href="#"><img th:src="@{mallcss/images/product/03.jpg}" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="#">Allen Keys Imperial/ Metric</a>
+                                    </div>
+                                </td>
+                                <td class="cat-price">$50</td>
+                                <td class="cat-edit">
+                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-item cat-product">
+                                    <div class="p-thumb">
+                                        <a href="#"><img th:src="@{mallcss/images/product/04.jpg}" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="#">Allen Keys Imperial/ Metric</a>
+                                    </div>
+                                </td>
+                                <td class="cat-price">$100</td>
+                                <td class="cat-edit">
+                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="product-item cat-product">
+                                    <div class="p-thumb">
+                                        <a href="#"><img th:src="@{mallcss/images/product/05.jpg}" alt="product"></a>
+                                    </div>
+                                    <div class="p-content">
+                                        <a href="#">Allen Keys Imperial/ Metric</a>
+                                    </div>
+                                </td>
+                                <td class="cat-price">$200</td>
+                                <td class="cat-edit">
+                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop Cart Page Section ending here -->
+
+
+    <!-- footer section start here -->
+    <div th:replace="~{common/mallcommon::footbar}"></div>
+    <!-- footer section ending here -->
+
+
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>

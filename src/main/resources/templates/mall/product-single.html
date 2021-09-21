@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{mallcss/images/x-icon.png}" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+<body>
+
+    <!-- header section start here -->
+    <div th:replace="~{common/mallcommon::topbar}"></div>
+    <!-- header section ending here -->
+
+    <!-- Page Header section start here -->
+    <div class="page-header py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-area">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Product Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header section ending here -->
+
+    <!-- product single section start here -->
+    <div class="product-single-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12">
+                    <div class="product-single-area overflow-hidden">
+                        <div class="swiper-container gallery-top">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="gallery-main-thumb">
+                                        <img src="mallcss/images/product/single/01.jpg"  alt="product images">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12">
+                    <div class="product-details">
+                        <div class="product-single-content">
+                            <h3 class="title" th:text="${product.getTitle()}"></h3>
+
+                            <h5 class="amount"> ￥ [[${product.getPrice()}]]</h5>
+                            <form class="size-form">
+                                <div class="row">
+                                    <div class="col-sm-6 col-12">
+                                        <a class="theme-btn" th:href="@{/toPay}+${product.getPid()}"><span>买 买 买</span></a>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- product single section ending here -->
+
+
+    <!-- footer section start here -->
+    <div th:replace="~{common/mallcommon::footbar}"></div>
+    <!-- footer section ending here -->
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>

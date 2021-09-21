@@ -1,0 +1,98 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+                xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{/mallcss/images/x-icon.png}" type="image/x-icon">
+
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+
+<!-- header section start here -->
+    <div th:replace="~{common/mallcommon::topbar}"></div>
+    <!-- header section ending here -->
+
+
+    <!-- Collection product section start here -->
+    <div class="product-section py-3">
+        <div class="container">
+            <div class="product-area">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="product-top-area">
+                            <div class="product-title">
+                                <div class="wssi-title d-flex flex-wrap align-items-center p-3 border-bottom bg-white">
+                                    <img th:src="@{mallcss/images/icon/08.png}" alt="weekly-image">
+                                    <h4 class="mb-0 ms-2">产品列表</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-bottom-area">
+                            <div class="product-body">
+                                <div class="product-slider overflow-hidden">
+                                    <div class="row justify-content-start row-cols-md-2 row-cols-xl-5 row-cols-1 g-2">
+                                        <div class="col" th:each="product:${products}">
+                                            <div class="product-item bg-white">
+                                                <div class="product-inner position-relative">
+                                                    <div class="porduct-thumb position-relative">
+                                                        <img th:src="@{${product.getPictureUrl()}}" style="display: block;width: 216px;height: 236px;text-align: center">
+                                                        <div class="add-cart position-absolute" sec:authorize="isAuthenticated()">
+                                                            <a th:href="@{/addCart}+${product.getPid()}"> <i class="icofont-shopping-cart"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="porduct-content p-4">
+                                                        <a th:href="@{/toProduct}+${product.getPid()}">
+                                                            <h6 class="mb-0" th:text="${product.getTitle()}"></h6>
+                                                        </a>
+                                                    </div>
+                                                    <h5 style="color: red"><span class="fw-normal me-3" style="color: red">Price: ￥</span>[[${product.getPrice()}]]</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paginations">
+                            <ul class="d-flex flex-wrap justify-content-center">
+                                <li><a class="prev" th:href="(${num}-1)==0?'javascript:void(0)':@{'/page'+(${num}-1)}"><</a></li>
+                                <!--                    <li><span class="current">1</span></li>-->
+                                <li th:each=" i : ${#numbers.sequence(1,pageNum)}">
+                                    <a class="num" th:href="@{/page}+${i}" th:text="${i}">
+                                    </a>
+                                </li>
+                                <li><a class="next" th:href="((${num}+1)>=${pageNum})?'javascript:void(0)':@{'/page'+(${num}+1)}">></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Collection product section ending here -->
+
+    <!-- footer section start here -->
+   <div th:replace="~{common/mallcommon::footbar}"></div>
+    <!-- footer section ending here -->
+
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>
