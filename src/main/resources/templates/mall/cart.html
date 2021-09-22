@@ -66,65 +66,9 @@
                                     <a th:href="@{/delectPro}+${product.getPid()}"><i class="icofont-close"></i></a>
                                 </td>
                                 <td class="cat-edit" th:if="${product.getStatus()}==0">
-                                    <a href="#" class="theme-btn text-white">结算</a>
+                                    <a th:href="@{/toPay}+${product.getPid()}" class="theme-btn text-white">结算</a>
                                 </td><td class="cat-edit" th:if="${product.getStatus()}==1">
                                     <p href="#" class="theme-btn text-white">宝贝已经被交易</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-item cat-product">
-                                    <div class="p-thumb">
-                                        <a href="#"><img th:src="@{mallcss/images/product/02.jpg}" alt="product"></a>
-                                    </div>
-                                    <div class="p-content">
-                                        <a href="#">Allen Keys Imperial/ Metric</a>
-                                    </div>
-                                </td>
-                                <td class="cat-price">$250</td>
-                                <td class="cat-edit">
-                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-item cat-product">
-                                    <div class="p-thumb">
-                                        <a href="#"><img th:src="@{mallcss/images/product/03.jpg}" alt="product"></a>
-                                    </div>
-                                    <div class="p-content">
-                                        <a href="#">Allen Keys Imperial/ Metric</a>
-                                    </div>
-                                </td>
-                                <td class="cat-price">$50</td>
-                                <td class="cat-edit">
-                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-item cat-product">
-                                    <div class="p-thumb">
-                                        <a href="#"><img th:src="@{mallcss/images/product/04.jpg}" alt="product"></a>
-                                    </div>
-                                    <div class="p-content">
-                                        <a href="#">Allen Keys Imperial/ Metric</a>
-                                    </div>
-                                </td>
-                                <td class="cat-price">$100</td>
-                                <td class="cat-edit">
-                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="product-item cat-product">
-                                    <div class="p-thumb">
-                                        <a href="#"><img th:src="@{mallcss/images/product/05.jpg}" alt="product"></a>
-                                    </div>
-                                    <div class="p-content">
-                                        <a href="#">Allen Keys Imperial/ Metric</a>
-                                    </div>
-                                </td>
-                                <td class="cat-price">$200</td>
-                                <td class="cat-edit">
-                                    <a href="#" class="theme-btn text-white">Add To Cart</a>
                                 </td>
                             </tr>
                         </tbody>

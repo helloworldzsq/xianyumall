@@ -1,0 +1,79 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro BD</title>
+    <link rel="shortcut icon" th:href="@{/mallcss/images/x-icon.png}" type="image/x-icon">
+    <link rel="stylesheet" th:href="@{mallcss/css/icofont.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/magnific-popup.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/swiper.min.css}">
+    <link rel="stylesheet" th:href="@{mallcss/css/style.css}">
+</head>
+
+<body>
+
+    <!-- header section start here -->
+    <div th:replace="~{common/mallcommon::topbar}"></div>
+    <!-- header section ending here -->
+
+    <!-- Page Header section start here -->
+    <div class="page-header py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-header-area">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">404</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header section ending here -->
+
+    <!-- 404 Section Section Starts Here -->
+    <div class="fore-zero padding-tb">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-5 col-12">
+                    <div class="fore-zero-area p-5 text-center rounded">
+                        <div class="fza-thumb mb-4">
+                            <img th:src="@{mallcss/images/404.png}" alt="404">
+                        </div>
+                        <div class="fza-content">
+                            <h3>Something is Wrong</h3>
+                            <p>The page you are looking for was moved, removed, renamed or might never existed.</p>
+                            <a th:href="@{/}" class="theme-btn mt-2">Go Back Home</a>
+                        </div>
+                    </div>
+                    <div class="icon-thumb text-center">
+                        <img th:src="@{mallcss/images/404-sape.png}" alt="icon thumb">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 404 Section Section Ends Here -->
+
+    <!-- footer section start here -->
+    <div th:replace="~{common/mallcommon::footbar}"></div>
+    <!-- footer section ending here -->
+
+
+    <script th:src="@{mallcss/js/jquery.js}"></script>
+    <script th:src="@{mallcss/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{mallcss/js/jquery.magnific-popup.min.js}"></script>
+    <script th:src="@{mallcss/js/isotope.pkgd.min.js}"></script>
+    <script th:src="@{mallcss/js/swiper.min.js}"></script>
+    <script th:src="@{mallcss/js/functions.js}"></script>
+</body>
+
+</html>

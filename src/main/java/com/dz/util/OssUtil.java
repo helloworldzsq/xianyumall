@@ -16,9 +16,9 @@ public class OssUtil {
 
     Log log = LogFactory.getLog(OssUtil.class);
     private String endpoint = "oss-cn-hangzhou.aliyuncs.com";
-    //阿里云的accessKeyId
+    //阿里云的accessKeyId 这里修改成为自己的
     private String accessKeyId = "LTAI5t8hEXyBpSVw9Z6Mw36A";
-    //阿里云的accessKeySecret　　
+    //阿里云的accessKeySecret　这里修改成为自己的
      private String accessKeySecret = "MRi24YLYUvO03Gyqeojuom8WIoWMJm";
 
     //空间
